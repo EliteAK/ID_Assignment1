@@ -1,0 +1,12 @@
+git commit -m "Write comment here" --Commits
+git push -- pushes to website
+git clone https://github.com/s5071846/ID_Assignment1.git -- Brings file to new location- dont use if already there
+git pull -- update local version of files
+git status -- to see status
+git add . -- stages everything
+
+When uploading
+
+git add .
+git commit -m "Enter comment here"
+git push
