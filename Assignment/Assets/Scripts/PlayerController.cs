@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
+
+
 
 public class PlayerController : MonoBehaviour {
 
 	public Camera camera;
 	public NavMeshAgent agent;
+    public static float steps;
 
 	Animator myAnim;
 	float dist;
@@ -24,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) {
 			Ray ray = camera.ScreenPointToRay (Input.mousePosition);
 
 			if (Physics.Raycast (ray, out hit)) {
@@ -36,7 +40,10 @@ public class PlayerController : MonoBehaviour {
 
 		if (isMoving == true) 
 		{
-			Vector3 relativePos = hit.point - transform.position;
+            steps = steps + Time.deltaTime*3;
+            HUD_Controller.score = HUD_Controller.score -(Time.deltaTime * 3);
+
+            Vector3 relativePos = hit.point - transform.position;
 			newRotation = Quaternion.LookRotation (relativePos, Vector3.up);
 			newRotation.x = 0.0f;
 			newRotation.z = 0.0f;

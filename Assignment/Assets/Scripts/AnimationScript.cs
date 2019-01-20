@@ -35,7 +35,7 @@ public class AnimationScript : MonoBehaviour {
 
        
         
-        if(isAnimated)
+        if(isAnimated && Time.timeScale == 1f)
         {
             if(isRotating)
             {

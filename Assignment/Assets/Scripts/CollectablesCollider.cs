@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class CollectablesCollider : MonoBehaviour {
 
-	CollectablesController cc;
-
+	HUD_Controller HC;
 
 	private AudioSource source;
 	[SerializeField] private AudioClip clip;
 
 	void Start()
 	{
-		GameObject ccgo = GameObject.Find ("Collectables Controller");
-		cc = ccgo.GetComponent<CollectablesController> ();
+		GameObject ccgo = GameObject.Find ("HUDController");
+		HC = ccgo.GetComponent<HUD_Controller> ();
 	}
 
 	void OnTriggerEnter (Collider col)
 	{
-		Debug.Log ("You've collected a " + gameObject.name);
 		source = col.GetComponent<AudioSource> ();
 		source.PlayOneShot(clip);
-		cc.IncrementCount (gameObject);
+		HC.IncrementCount (gameObject);
 		Destroy(gameObject);
 	}
 }
