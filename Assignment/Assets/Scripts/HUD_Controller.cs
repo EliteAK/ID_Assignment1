@@ -45,8 +45,7 @@ public class HUD_Controller : MonoBehaviour
         bottleText.text = "" + Bottles;
         dynamiteText.text = "" + Dynamite;
         scoreText.text = score.ToString("F0");
-        //healthBar.fillAmount -= 0.02f * Time.deltaTime;
-        healthBar.fillAmount -= 0.2f * Time.deltaTime;
+        healthBar.fillAmount -= 0.02f * Time.deltaTime;
         health = healthBar.fillAmount;
         stepsText.text = PlayerController.steps.ToString("F0");
     }

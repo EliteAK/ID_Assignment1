@@ -21,6 +21,8 @@ public class MenuController : MonoBehaviour {
     public Text highscoreDisplay;
     public GameObject newHighscore;
     public GameObject notHighscore;
+    public bool characterSelected = false;
+    public int characterNum;
 
     public void PlayGame()
     {
@@ -73,9 +75,28 @@ public class MenuController : MonoBehaviour {
         endMenu.SetActive(false);
         HUD.SetActive(false);
     }
-	
-	void Update () {
-        if (usernameInput.text == "")
+
+    public void Character1()
+    {
+        characterNum = 1;
+        characterSelected = true;
+    }
+
+    public void Character2()
+    {
+        characterNum = 2;
+        characterSelected = true;
+    }
+
+    public void Character3()
+    {
+        characterNum = 3;
+        characterSelected = true;
+    }
+
+
+    void Update () {
+        if (usernameInput.text == "" || characterSelected == false)
         {
             playButton.interactable = false;
         }
@@ -87,7 +108,6 @@ public class MenuController : MonoBehaviour {
         {
             EndGame();
         }
-        Debug.Log(highScoreArray[0].highScore);
     }
     public void SaveData()
     {

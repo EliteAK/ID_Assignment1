@@ -9,8 +9,13 @@ public class SurpiseItem : MonoBehaviour {
     bool timer = false;
     public float timerDelay = 4f;
 
-    void OnTriggerEnter()
+    private AudioSource source;
+    [SerializeField] private AudioClip clip;
+
+    void OnTriggerEnter(Collider col)
     {
+        source = col.GetComponent<AudioSource>();
+        source.PlayOneShot(clip);
         Time.timeScale = 0f;
         popupMenu.SetActive(true);
         examine.SetActive(false);       
