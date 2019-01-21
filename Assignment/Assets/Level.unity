@@ -22851,7 +22851,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'This is some TNT that used
 
-    to be usedfor mining gold.'
+    to be used for mining gold.'
 --- !u!222 &1020269746
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38819,6 +38819,7 @@ MonoBehaviour:
   walkingClip: {fileID: 8300000, guid: 69a04eaf03f12f04aa6c625408e26554, type: 3}
   walkingSource: {fileID: 120419483}
   menuCamera: {fileID: 1469774261}
+  popup: {fileID: 560261355}
 --- !u!95 &1709864580
 Animator:
   serializedVersion: 3

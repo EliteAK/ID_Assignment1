@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
     public AudioSource walkingSource;
     public static bool walkingSound;
     public GameObject menuCamera;
+    public GameObject popup;
 
     // Use this for initialization
     void Start () {
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
-        if (menuCamera.activeSelf)
+        if (menuCamera.activeSelf||popup.activeSelf)
         {
             walkingSource.Stop();
             walkingSound = false;
